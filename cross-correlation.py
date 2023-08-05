@@ -10,3 +10,8 @@ def E(x, y, lag=0): # given two series x, y, calculate E[XY] (reflective of Pear
     assert len(xlag) == len(ylag)
     assert len(xlag) > 10 # ensure you have enough data to get an accurate coefficient in the first place
     return np.dot(xlag, ylag)/len(xlag)
+
+lag_arr = np.arange(-40, 40, 1)
+res = [E(x, y, lag) for lag in lag_arr] 
+# arg max argument denotes the lag that corresponds to the highest correlation
+# arg min argument denotes the lag that corresponds to the highest anti-correlation
