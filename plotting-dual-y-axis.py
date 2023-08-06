@@ -1,0 +1,13 @@
+fig, ax1 = plt.subplots()
+fig.set_size_inches(15, 10)
+
+ax2 = ax1.twinx()
+ax1.plot(x, y_true, c='green', label='y true')
+ax1.scatter(x, y_noisy, c='orange', label='noisy')
+ax2.plot(x, z_true, label='z true')
+ax1.set_xlabel('x') 
+ax1.set_ylabel('y')
+ax2.set_ylabel('z')
+plt.legend()
+plt.title('Plot of y, zagainst x')
+plt.show()
